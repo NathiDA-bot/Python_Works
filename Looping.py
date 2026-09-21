@@ -91,5 +91,50 @@ i = 0
 while i <= len(items)-1:
     print(items[i])
     i = i + 1
+#Use Case 1: Division Safe Calculator
+"""Ask the user for two numbers.
+ Perform division and print the result.
+ If the user tries to divide by 0, print:
+ "Error: Division by zero is not allowed."""
+try :
 
+    number1= int(input("Enter a number:"))
+    number2= int(input("Enter another number:"))
+    number3= number1/number2
+    print("The division of 2 number is",number3)
+except ZeroDivisionError as err_message:
+    print(f"something went wrong : {err_message}")
+"""Use Case 2: Safe Integer Input
+Ask the user to enter a number.
+Try converting it to an integer.
+If conversion fails, print:
+"Invalid input. Please enter a numeric value."""
 
+try:
+    number1 = int(input("Enter a number:"))
+
+except ValueError as err_message:
+    print("Enter valid numeric value")
+    print(f"something went wrong : {err_message}")
+"""
+Use Case 3 (Bug Fixing): Multiple Exception Handling
+ Fix the below code so it handles both invalid input and division by zero correctly.
+Incorrect code:
+num1 = int(input("Enter number 1: "))
+ num2 = int(input("Enter number 2: "))
+ result = num1 / num2
+ print("Result:", result)
+Expected behavior:
+If user enters non-numeric values → print "Invalid input"
+If num2 is zero → print "Cannot divide by zero."
+Otherwise print the result. """
+try :
+    num1 = int(input("Enter number 1: "))
+    num2 = int(input("Enter number 2: "))
+    result = num1 / num2
+    print("Result:", result)
+except ValueError as err_message:
+    print("Invalid Input")
+    print(f"something went wrong : {err_message}")
+except ZeroDivisionError as err_message:
+    print("Cannot divide by zero.
