@@ -376,3 +376,29 @@ elif temp > 37 and temp < 39:
 else :
  print("High fever")
 
+#Scenario
+"""
+Select the most suitable transportation option based on available money 
+and ticket prices.
+
+Possible Options
+Flight
+Train
+Bus
+No transportation (because the budget is insufficient)
+"""
+Wallet =int(input("Enter the available money: "))
+
+flight=6000
+bus=3000
+train=4200
+if Wallet >= flight or Wallet >= bus or Wallet >= train :
+    print("Eliglible for Travel")
+    if  Wallet >= flight  or flight <=train and flight <=bus:
+        print("You can travel by flight.The Fare is",flight)
+    elif Wallet >=train or  train<=bus :
+        print("You can travel by train.The fare is",train)
+    elif Wallet >= bus :
+        print("You can travel by bus.The fare is",bus)
+else :
+    print("No transporation ")
